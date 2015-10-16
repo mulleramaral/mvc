@@ -1,0 +1,19 @@
+{
+    "name": "vendor/topterm",
+    "description": "Loja da top term",
+    "authors": [
+        {
+            "name": "Muller caetano",
+            "email": "miilleramaral@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload":{
+        "psr-0":{
+            "topterm":"vendor",
+            "App":"/"
+        }
+    }
+}
