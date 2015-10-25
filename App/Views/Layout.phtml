@@ -1,16 +1,27 @@
 <!doctype html>
 <html>
     <head>
-        <title><?php echo $titulo?></title>
+        <title><?=$this->view->titulo ?></title>
     </head>
     <body>
         <header>
-            <h1>Cabeçalho</h1>
+            <h1></h1>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/empresa">Empresa</a></li>
                 <li><a href="/nossotrabalho">Nosso Trabalho</a></li>
                 <li><a href="/localizacao">Localização</a></li>
                 <li><a href="/faleconosco">Fale Conosco</a></li>
+                <li><a href="/newsletter">Newsletter</a></li>
             </ul>
         </header>
+        
+        <?php $this->content(); ?>
+        
+    <footer>
+        <h2>Rodapé</h2>
+    </footer>
+</body>
+
+
+</html>

@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/topterm/App/Views/localizacao.php</file>
-            <file>file:/C:/xampp/htdocs/topterm/App/Views/nossotrabalho.php</file>
-            <file>file:/C:/xampp/htdocs/topterm/App/Views/faleconosco.php</file>
-            <file>file:/C:/xampp/htdocs/topterm/App/Views/empresa.php</file>
+            <file>file:/C:/xampp/htdocs/topterm/vendor/topterm/Componente/Form.php</file>
+            <file>file:/C:/xampp/htdocs/topterm/App/Views/index/faleconosco.phtml</file>
             <file>file:/C:/xampp/htdocs/topterm/App/Controllers/Index.php</file>
-            <file>file:/C:/xampp/htdocs/topterm/App/Views/index.php</file>
-            <file>file:/C:/xampp/htdocs/topterm/public/index.php</file>
         </group>
     </open-files>
 </project-private>

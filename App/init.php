@@ -32,7 +32,13 @@ class init extends Bootstrap {
                 'route' => '/faleconosco',
                 'controller' => 'index',
                 'action' => 'faleconosco'
+            ),
+            'newsletter' => array(
+                'route' => '/newsletter',
+                'controller' => 'index',
+                'action' => 'newsletter'
             )
+             
         );
         $this->setRoutes($rotas);
     }

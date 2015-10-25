@@ -2,28 +2,6 @@
 
 require_once '../vendor/autoload.php';
 
+ini_set('error_reporting', E_STRICT);
 
-$pagina = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
-switch ($pagina){
-    case '/':
-        $titulo = 'Home';
-        break;
-    case '/empresa':
-        $titulo = 'Empresa';
-        break;
-    case '/nossotrabalho':
-        $titulo = 'Nosso Trabalho';
-        break;
-    case '/localizacao':
-        $titulo = 'Localização';
-        break;
-    case '/faleconosco':
-        $titulo = 'Fale Conosco';
-        break;
-    default :
-        $titulo = 'Página não encontrada';
-}
-
-require_once './cabecalho.php';
 $Init = new \App\init();
-require_once './rodape.php';
