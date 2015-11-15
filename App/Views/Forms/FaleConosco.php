@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Views\Index;
+namespace App\Views\Forms;
 
 use topterm\Componente\Form;
 use topterm\Componente\FormElement;
 
-class formFaleConosco extends Form {
+class FaleConosco extends Form {
 
     public function Init() {
         $this->setName('Fale Conosco')
                 ->setMethod('post')
-                ->setAction('enviar.php');
+                ->setAction('entrar/enviar');
 
         $nome = new FormElement();
         $nome->name = 'nome';

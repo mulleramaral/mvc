@@ -1,11 +1,18 @@
 <!doctype html>
 <html>
     <head>
-        <title><?=$this->view->titulo ?></title>
+        <title><?= $this->view->titulo ?></title>
     </head>
     <body>
         <header>
-            <h1></h1>
+            <?php
+            if (!isset($_SESSION['logado'])):
+                ?>
+                <ul><li><a href="/entrar">Entrar</a></li></ul>
+            <?php else: ?>
+                <p>Seja bem vindo <?=$_SESSION['usuario'] ?></p>
+                <ul><li><a href="/sair">Sair</a></li></ul>
+            <?php endif; ?>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/empresa">Empresa</a></li>
@@ -14,14 +21,22 @@
                 <li><a href="/faleconosco">Fale Conosco</a></li>
                 <li><a href="/newsletter">Newsletter</a></li>
             </ul>
+
+            <h3>Aréa Restrita</h3>
+            <ul>
+                <?php
+                if (isset($_SESSION['logado'])):
+                    ?>
+                    <li><a href="/clientes">Clientes</a></li>
+                <?php endif;
+                ?>
+            </ul>
         </header>
-        
+
         <?php $this->content(); ?>
-        
-    <footer>
-        <h2>Rodapé</h2>
-    </footer>
-</body>
 
-
+        <footer>
+            <h2>Rodapé</h2>
+        </footer>
+    </body>
 </html>

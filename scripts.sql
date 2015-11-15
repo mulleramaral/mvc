@@ -1,0 +1,10 @@
+CREATE DATABASE topterm;
+use topterm;
+CREATE TABLE login(id int auto_increment primary key,login varchar(255),senha varchar(255));
+CREATE TABLE clientes(id int auto_increment primary key,nome varchar(255),email varchar(255));
+INSERT INTO login(login,senha) VALUES("school","school");
+INSERT INTO login(login,senha) VALUES("muller","muller");
+INSERT INTO login(login,senha) VALUES("root","root");
+INSERT INTO clientes(nome,email) values("Zezinho","zezinho@gmail.com");
+INSERT INTO clientes(nome,email) values("Chiquinha","chiquinha@gmail.com");
+INSERT INTO clientes(nome,email) values("Toinha","toinha@gmail.com");

@@ -8,6 +8,7 @@ class FormElement {
     public $type;
     public $name;
     public $label;
+    public $required;
 
     public function render() {
         switch ($this->tipo) {

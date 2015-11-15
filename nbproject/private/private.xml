@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/topterm/vendor/topterm/Componente/Form.php</file>
-            <file>file:/C:/xampp/htdocs/topterm/App/Views/index/faleconosco.phtml</file>
+            <file>file:/C:/xampp/htdocs/topterm/vendor/topterm/Init/Bootstrap.php</file>
+            <file>file:/C:/xampp/htdocs/topterm/App/init.php</file>
             <file>file:/C:/xampp/htdocs/topterm/App/Controllers/Index.php</file>
+            <file>file:/C:/xampp/htdocs/topterm/App/Views/index/clientes.phtml</file>
+            <file>file:/C:/xampp/htdocs/topterm/public/index.php</file>
         </group>
     </open-files>
 </project-private>

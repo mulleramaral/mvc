@@ -2,8 +2,11 @@
 
 namespace App\Controllers;
 use topterm\Controller\Action;
-use App\Views\Index\formFaleConosco;
+use App\Views\Forms\FaleConosco;
+use App\Views\Forms\entrar;
 use topterm\Componente\FormElement;
+use topterm\Di\Container;
+
 
 class Index extends Action {
 
@@ -29,7 +32,7 @@ class Index extends Action {
 
     public function faleconosco() {
         $this->view->titulo = "TopTerm - Fale Conosco";
-        $form = new formFaleConosco();
+        $form = new FaleConosco();
         $this->view->form = $form->render();
         $this->render('faleconosco');
     }
@@ -43,6 +46,48 @@ class Index extends Action {
         $email->name = 'email';
         $this->view->email = $email->render();
         $this->render('newsletter');
+    }
+    
+    public function clientes(){
+        $this->view->titulo = "TopTerm - Clientes";
+        $cliente = Container::getClass('clientes');
+        $clientes = $cliente->fetchAll();
+        $this->view->clientes = $clientes;
+        $this->render('clientes');
+    }
+    
+    public function entrar(){
+        $this->view->titulo = "TopTerm - Efetuar Login";
+        $entrar = new entrar();
+        $this->view->form = $entrar->render();
+        $this->render('entrar');
+    }
+    
+    public function remover($id = 0){
+        echo 'remover:' . $id;
+    }
+    
+    public function login(){
+        $login = Container::getClass('Login');
+        $usuario = $_POST['usuario'];
+        $senha = $_POST['senha'];
+        $resultados = $login->validarLogin($usuario,$senha);
+        if(empty($resultados))
+        {
+            echo 'Usuario ou senha inválidos';
+            header('Location:/entrar');
+        }
+        else{
+            $_SESSION['logado'] = true;
+            $_SESSION['usuario'] = $usuario;
+            header('Location:/');
+        }
+    }
+    
+    public function sair(){
+        unset($_SESSION['logado']);
+        unset($_SESSION['usuario']);
+        header("Location:/");
     }
     
     public function form($form){

@@ -1,0 +1,23 @@
+<h1>Clientes</h1>
+
+<table>
+    <thead>
+    <th>Código</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Editar</th>
+    <th>Remover</th>
+    </thead>
+    <tbody>
+    <?php foreach ($this->view->clientes as $clientes):?>
+        <tr><td><?=$clientes['id']?></td>
+            <td><?=$clientes['nome']?></td>
+            <td><?=$clientes['email']?></td>
+            <td><a href='/editar&id=<?=$clientes['id']?>'>Editar</a></td>
+            <td><a href='/remover&id=<?=$clientes['id']?>'>Remover</a></td>
+        </tr>
+    <?php  endforeach;?>
+    </tbody>
+</table>
+
+<p><a href="inserir">Inserir</a></p>

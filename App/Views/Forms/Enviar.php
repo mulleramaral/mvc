@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Views\Forms;
+
 Echo 'enviado';
 print_r($_POST);
 
