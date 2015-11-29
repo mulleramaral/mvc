@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Controllers;
+
 use topterm\Controller\Action;
 use App\Views\Forms\FaleConosco;
 use App\Views\Forms\entrar;
 use topterm\Componente\FormElement;
 use topterm\Di\Container;
-
 
 class Index extends Action {
 
@@ -36,8 +36,8 @@ class Index extends Action {
         $this->view->form = $form->render();
         $this->render('faleconosco');
     }
-    
-    public function newsletter(){
+
+    public function newsletter() {
         $this->view->titulo = "TopTerm - Newsletter";
         $email = new FormElement();
         $email->label = 'E-mail:';
@@ -47,54 +47,40 @@ class Index extends Action {
         $this->view->email = $email->render();
         $this->render('newsletter');
     }
-    
-    public function clientes(){
-        $this->view->titulo = "TopTerm - Clientes";
-        $cliente = Container::getClass('clientes');
-        $clientes = $cliente->fetchAll();
-        $this->view->clientes = $clientes;
-        $this->render('clientes');
-    }
-    
-    public function entrar(){
+
+    public function entrar() {
         $this->view->titulo = "TopTerm - Efetuar Login";
         $entrar = new entrar();
         $this->view->form = $entrar->render();
         $this->render('entrar');
     }
-    
-    public function remover($id = 0){
-        echo 'remover:' . $id;
-    }
-    
-    public function login(){
+
+    public function login() {
         $login = Container::getClass('Login');
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
-        $resultados = $login->validarLogin($usuario,$senha);
-        if(empty($resultados))
-        {
+        $resultados = $login->validarLogin($usuario, $senha);
+        if (empty($resultados)) {
             echo 'Usuario ou senha inválidos';
             header('Location:/entrar');
-        }
-        else{
+        } else {
             $_SESSION['logado'] = true;
             $_SESSION['usuario'] = $usuario;
             header('Location:/');
         }
     }
-    
-    public function sair(){
+
+    public function sair() {
         unset($_SESSION['logado']);
         unset($_SESSION['usuario']);
         header("Location:/");
     }
-    
-    public function form($form){
+
+    public function form($form) {
         return $form;
     }
-    
-    public function formElement($element){
+
+    public function formElement($element) {
         return $element;
     }
 

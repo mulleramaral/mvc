@@ -54,31 +54,30 @@ class init extends Bootstrap {
             ),
             'listarclientes' => array(
                 'route' => '/clientes',
-                'controller' => 'index',
+                'controller' => 'clientes',
                 'action' => 'clientes'
             ),
             'clientesinserir' => array(
-                'route'=> '/inserir',
-                'controller' => 'index',
+                'route'=> '/clientes/inserir',
+                'controller' => 'clientes',
                 'action' => 'inserir'
             ),
+            'clientessalvar' => array(
+                'route' => '/clientes/salvar',
+                'controller' => 'clientes',
+                'action' => 'salvar'
+            ),
             'clienteseditar' => array(
-                'route' => '/editar',
-                'controller' => 'index',
+                'route' => '/clientes/editar',
+                'controller' => 'clientes',
                 'action' => 'editar'
             ),
             'clientesremover' => array(
-                'route' => '/remover',
-                'controller' => 'index',
+                'route' => '/clientes/remover',
+                'controller' => 'clientes',
                 'action' => 'remover'
             )
         );
         $this->setRoutes($rotas);
     }
-
-    public static function getDb() {
-        $db = new \PDO("mysql:host=localhost;dbname=topterm", "root", "");
-        return $db;
-    }
-
 }

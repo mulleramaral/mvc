@@ -9,18 +9,29 @@ class FormElement {
     public $name;
     public $label;
     public $required;
-
+    public $valor;
+    public $readonly = "";
+    
     public function render() {
+        $componente = "";
         switch ($this->tipo) {
             case 'input':
-                return "<Label>{$this->label}<{$this->tipo} type='{$this->type}' name='{$this->name}'></label><br/>";
+                $componente = "<Label>{$this->label}<{$this->tipo} type='{$this->type}' name='{$this->name}' value='{$this->valor}'";
+                if($this->readonly == true){
+                    $componente .= " readonly ";
+                }
+                $componente .= "'></label><br/>";
+                break;
             case 'textarea':
-                return "<Label>{$this->label}<{$this->tipo} name='{$this->name}'></{$this->tipo}></label><br/>";
+                $componente = "<Label>{$this->label}<{$this->tipo} name='{$this->name}'></{$this->tipo}></label><br/>";
+                break;
             case 'submit':
-                return "<input type='{$this->tipo}' name='{$this->name}'><br/>";
+                $componente = "<input type='{$this->tipo}' name='{$this->name}' value='{$this->label}'><br/>";
+                break;
             default:
                 break;
         }
+        return $componente;
     }
 
 }

@@ -2,9 +2,6 @@
 
 namespace App\Views\Forms;
 
-Echo 'enviado';
-print_r($_POST);
-
 $nome = $_POST['nome'];
 $para = $_POST['email'];
 $mensagem = $_POST['mensagem'];

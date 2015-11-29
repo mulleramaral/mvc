@@ -13,11 +13,11 @@
         <tr><td><?=$clientes['id']?></td>
             <td><?=$clientes['nome']?></td>
             <td><?=$clientes['email']?></td>
-            <td><a href='/editar/<?=$clientes['id']?>'>Editar</a></td>
-            <td><a href='/remover/<?=$clientes['id']?>'>Remover</a></td>
+            <td><a href='/clientes/editar/<?=$clientes['id']?>'>Editar</a></td>
+            <td><a href='/clientes/remover/<?=$clientes['id']?>'>Remover</a></td>
         </tr>
     <?php  endforeach;?>
     </tbody>
 </table>
 
-<p><a href="/inserir">Inserir</a></p>
+<p><a href="/clientes/inserir">Inserir</a></p>

@@ -10,7 +10,7 @@
                 ?>
                 <ul><li><a href="/entrar">Entrar</a></li></ul>
             <?php else: ?>
-                <p>Seja bem vindo <?=$_SESSION['usuario'] ?></p>
+                <p>Seja bem vindo <?= $_SESSION['usuario'] ?></p>
                 <ul><li><a href="/sair">Sair</a></li></ul>
             <?php endif; ?>
             <ul>
@@ -22,15 +22,18 @@
                 <li><a href="/newsletter">Newsletter</a></li>
             </ul>
 
-            <h3>Aréa Restrita</h3>
-            <ul>
-                <?php
-                if (isset($_SESSION['logado'])):
-                    ?>
-                    <li><a href="/clientes">Clientes</a></li>
-                <?php endif;
+
+
+            <?php
+            if (isset($_SESSION['logado'])):
                 ?>
-            </ul>
+                <h3>Aréa Restrita</h3>
+                <ul>
+                    <li><a href="/clientes">Clientes</a></li>
+                </ul>
+            <?php endif;
+            ?>
+
         </header>
 
         <?php $this->content(); ?>
